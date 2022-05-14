@@ -29,6 +29,7 @@ query = content
 
 form = st.form("bitquery")
 api = form.text_input("Enter your Bitquery API key")
+# bitqueryAPIKey = api
 submitted = form.form_submit_button("Submit")
 
 result = 0
@@ -53,13 +54,14 @@ if submitted:
 
 st.subheader("Generate your Pandas DataFrame")
 
-result = bitqueryAPICall(query)
 
 form2 = st.form("pandas")
 feature1 = form2.text_input("Enter the first feature")
 feature2 = form2.text_input("Enter the second feature")
 feature3 = form2.text_input("Enter the third feature")
+api = form2.text_input("Enter your API key for confirmation")
 submitted2 = form2.form_submit_button("Generate Pandas DataFrame")
 
-if submitted2: 
+if submitted2:
+	result = bitqueryAPICall(query) 
 	renderPandas(result, feature1, feature2, feature3) 
