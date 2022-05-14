@@ -10,6 +10,8 @@ st.set_page_config (
     initial_sidebar_state="collapsed"
 )
 
+st.title("Bitcoin Blocks Data with Bitquery")
+
 def getAPIKey():
 	return str(api)
 
